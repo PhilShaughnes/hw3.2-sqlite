@@ -1,4 +1,6 @@
-***HW 3.2 SQL Practice***
+## HW 3.2 SQL Practice
+
+
 
 **Explorer Mode**
 
@@ -24,13 +26,13 @@ RESULT:
 
 1.3) What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)
 
-COMMAND:
+COMMAND: (exactly 'Book')
 >SELECT * FROM items WHERE category='Book' ORDER BY price ASC LIMIT 1;
 
 RESULT:
->  
+>  no result
 
-COMMAND:
+COMMAND: (category contains 'book')
 >SELECT * FROM items WHERE category LIKE '%Books%' ORDER BY price ASC LIMIT 1;
 
 RESULT:
@@ -126,7 +128,7 @@ RESULT:
 
 COMMAND:
 
-> SELECT items.title, SUM(items.price*orders.quantity) FROM orders JOIN items ON orders.item_id=items.id GROUP BY orders.item_id ORDER BY SUM(items.price*orders.quantity) DESC LIMIT 1;
+> SELECT items.title, SUM(items.price*orders.quantity) FROM orders JOIN items ON orders.item_id=items.id GROUP BY orders.item_id ORDER BY SUM(items.price * orders.quantity) DESC LIMIT 1;
 
 RESULT:
 > title|SUM(items.price*orders.quantity)
