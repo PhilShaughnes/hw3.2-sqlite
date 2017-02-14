@@ -138,7 +138,7 @@ RESULT:
 2.3) What user spent the most?
 
 COMMAND:
-> SELECT users.first_name, users.last_name, SUM(orders.quantity*items.price) FROM users INNER JOIN orders ON users.id=orders.user_id INNER JOIN items ON orders.item_id=items.id GROUP BY users.id ORDER BY SUM(orders.quantity*items.price) DESC;
+> SELECT users.first_name, users.last_name, SUM(orders.quantity * items.price) FROM users INNER JOIN orders ON users.id=orders.user_id INNER JOIN items ON orders.item_id=items.id GROUP BY users.id ORDER BY SUM(orders.quantity * items.price) DESC;
 
 RESULT:
 > first_name|last_name|SUM(orders.quantity*items.price)
