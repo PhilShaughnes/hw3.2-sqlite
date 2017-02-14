@@ -148,7 +148,7 @@ RESULT:
 2.4) What were the top 3 highest grossing categories?
 
 COMMAND:
-> SELECT items.category, SUM(items.price*orders.quantity) FROM items JOIN orders ON items.id=orders.item_id GROUP BY items.category ORDER BY SUM(items.price*orders.quantity) DESC LIMIT 3;
+> SELECT items.category, SUM(items.price * orders.quantity) FROM items JOIN orders ON items.id=orders.item_id GROUP BY items.category ORDER BY SUM(items.price * orders.quantity) DESC LIMIT 3;
 
 RESULT:
 > category|SUM(items.price*orders.quantity)
